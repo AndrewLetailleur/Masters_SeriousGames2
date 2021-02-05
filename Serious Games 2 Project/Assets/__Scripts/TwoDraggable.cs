@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;//For easier inclusion of functionality.
+//Old input system is kept-in to be mindful on backwards compatibility, programming wise.
 
 //REFERENCE: https://www.youtube.com/watch?v=55TBhlOt_U8
 //WARNING = THIS CODE is atm, useful for ONLY Orthographic view

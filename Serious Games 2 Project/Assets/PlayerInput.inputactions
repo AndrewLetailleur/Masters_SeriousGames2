@@ -1,0 +1,174 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "MouseSettings",
+            "id": "a4d27240-6e80-4c96-8001-426e6437fdf3",
+            "actions": [
+                {
+                    "name": "ScrollMovement",
+                    "type": "Value",
+                    "id": "93f03a4b-27b9-4946-b2ed-f5315bc2ee15",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MouseMovement",
+                    "type": "Value",
+                    "id": "4acfd094-3ab6-4bb1-97af-5bd52602960e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftClick",
+                    "type": "Button",
+                    "id": "d5f19d0a-93a7-40ef-a686-38499717aca4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftClickHold",
+                    "type": "Button",
+                    "id": "e78b78bf-3f38-4a56-a220-e024707b4622",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                },
+                {
+                    "name": "LeftClickRelease",
+                    "type": "Button",
+                    "id": "923aa143-bc50-4a06-b9ea-fc0bc46b0bd1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                },
+                {
+                    "name": "MiddleClick",
+                    "type": "Button",
+                    "id": "a4714ec9-34b7-4615-bc9c-61958f63b6eb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "1e13351b-be6f-4b89-b378-76b19ef8a64f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1482f619-a6a2-48a8-ab86-d0353921cf1c",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3365846b-7627-491c-8c61-b66c07845ccc",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4bf49570-3764-4101-8d61-ed67168398ab",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3bad5c03-8625-46cd-ae25-c3d84db4ee0f",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa430419-10c8-4cb7-b703-0ceb45235c7e",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MiddleClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3655be54-2607-443b-b709-0440b3bb531e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftClickHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60a7f2b6-22d0-48ad-b4ab-8f16b948fe87",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftClickRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "KeyboardSettings",
+            "id": "0bce1cf9-485c-48a3-982d-f48eb6af5857",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "cff3e712-971c-4cd8-8fbe-4ce250f364c8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b4b9473f-67b3-46cd-9873-b63c79281b03",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
