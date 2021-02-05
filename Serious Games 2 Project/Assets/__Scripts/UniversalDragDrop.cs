@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;//For easier inclusion of functionality.
+//using UnityEngine.InputSystem;//For easier inclusion of functionality. Disabled for now
 //Old input system is kept-in to be mindful on backwards compatibility, programming wise.
 
 ///name to be fixed at a later date, rename title and class wise
@@ -42,11 +42,12 @@ public class UniversalDragDrop : MonoBehaviour
     */
     /*Options/etc can wait for later, UI/Audio & Resolution wise*/
 
-    public InputAction LeftClickHold;
-    private Vector2 mousePos;
-    private Vector3 objectPos;
+    //public InputAction LeftClickHold; //disabled for now
+    public Vector2 mouseDelta;
     public GameObject draggable;//the object TO drag, debug ref wise
+    public Vector3 objectPos;
 
+    public Vector3 curMousePos;
     //Awake is called when the script instance is being loaded
     void Awake() {
         /*
@@ -61,10 +62,35 @@ public class UniversalDragDrop : MonoBehaviour
         
     }//end Awake
 
-    //debug
-    void Update()
-    {//mousePos
+    // Update is called once per frame void Update() { }
+    void Update() {
+        curMousePos = Input.mousePosition;
+    }
 
+    //old input system logic
+    public void OnMouseDown() { FireCheck(); Debug.Log("Pressed primary button."); }
+    public void OnMouseUp() {
+        if (draggable != null) {
+            draggable = null;
+        }
+    }
+    public void OnMouseDrag()
+    {//if dragged.
+        if (draggable != null)
+        {
+            Debug.Log("Draggin a line");
+            draggable.transform.position = Input.mousePosition;
+            /*
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(
+                Input.mousePosition) - transform.position;
+            transform.Translate(mousePosition);*/
+        }
+    }
+
+
+
+    private void FireCheck() {
+        Debug.Log("Fire!");
         //3D Debug
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //Debug.DrawRay(ray.origin, ray.direction, Color.red);
@@ -73,58 +99,33 @@ public class UniversalDragDrop : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log("Hit!");
+            if (hit.collider.tag == "Player") {
+                draggable = hit.collider.gameObject;
+            }
+
             //grab/interact object here, on click
         }
         //2D Debug //https://forum.unity.com/threads/unity-2d-raycast-from-mouse-to-screen.211708/
         RaycastHit2D hit2d = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));//zero, as it's right "at" the position
         //Debug.DrawLine(Vector3.zero, hit2d.transform.position, Color.green);
-            //Debug Drawline is "buggy", but it "just works" in showing for now.
+        //Debug Drawline is "buggy", but it "just works" in showing for now.
+
         if (hit2d.collider != null)
         {
             Debug.Log("Hit 2d!");
             //grab/interact object here, on click
-        }
-
-
-    }
-    public void OnMouseMovement(InputValue input) {
-        mousePos = input.Get<Vector2>();
-
-        //drag analogs
-
-
-    }//2D
-    public void OnScrollMovement() { }//3D
-
-    public void OnLeftClick(InputValue input) {
-        
-        /*
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
-            //grab/interact object here
-        }*/
-
-    }//drag
-
-    public void OnLeftClickHold(InputValue input) {
-
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {
-            if (hit.collider.tag == "Player")//check
+            if (hit2d.collider.tag == "Player")
             {
-                Debug.Log("Hit!");
                 draggable = hit.collider.gameObject;
             }
-            //grab/interact object here
-        }//endif
-
-        //draggable.pos
+        }
     }
+    private void DragCheck() { }
 
-
-
-    // Update is called once per frame void Update() { }
+    /*//new WIP input system variables. Make code to take into account 2D and 3D, and test it's parsed properly here.
+    public void OnMouseMovement(InputValue input) { }//2D
+    public void OnScrollMovement() { }//3D
+    public void OnLeftClick() { }//drag
+    public void OnLeftClickHold() {}
+    */
 }

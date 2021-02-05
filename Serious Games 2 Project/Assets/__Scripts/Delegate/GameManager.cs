@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour
     #endregion
     #region State Setup
     //add in variables for tracking mini-game status, here?
-        //this could be 'used' to store progress for journal entries, unlock wise.
+    //this could be 'used' to store progress for journal entries, unlock wise.
+    public int score = 1;
     #endregion
     /*Options/etc can wait for later, UI/Audio & Resolution wise*/
 
