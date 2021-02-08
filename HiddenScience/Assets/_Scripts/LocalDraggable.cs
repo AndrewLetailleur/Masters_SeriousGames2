@@ -38,6 +38,7 @@ public class LocalDraggable : MonoBehaviour
 
     //Awake is called when the script instance is being loaded
     void Awake() {
+/*//code just don't work, so REDACT
 #region Rigidbody Check
         if (GetComponent<Rigidbody2D>() == null || GetComponent<Rigidbody>() == null)
         {
@@ -45,11 +46,13 @@ public class LocalDraggable : MonoBehaviour
             RigidbodyDebug();
         }
 #endregion
+*/
     //check for any collider first, if statement wise
     }//end Awake
 
-//add a rigidbody if viable, and remove the object if unviable.
-#region Rigidbody Debug
+    //add a rigidbody if viable, and remove the object if unviable.
+    #region Rigidbody Debug
+    /*//code just don't work, so REDACT
     private void RigidbodyDebug()
     {//check for any collider first, if statement wise
         if (GetComponent<Collider>())
@@ -70,10 +73,11 @@ public class LocalDraggable : MonoBehaviour
             Destroy(this);
         }
     }
-#endregion
- 
-//focus on old input system short term. See/figure out interactive elements for new input system later
-#region MouseClicks
+    */
+    #endregion
+
+    //focus on old input system short term. See/figure out interactive elements for new input system later
+    #region MouseClicks
     public void OnMouseDown() { isDragged = true; }
     public void OnMouseUp() { isDragged = false; }
     public void OnMouseDrag() {//if dragged. 2D Mode may need some debug, but mostly works fine, on a 2d/perspective plane!
