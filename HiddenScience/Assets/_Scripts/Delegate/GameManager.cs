@@ -53,24 +53,58 @@ public class GameManager : MonoBehaviour
     }
 
     #region Scene Transition Pattern
-    //Unity REF: https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
+    // //Unity REF: https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
 
-    //to targeted Prototype world
-        //GUI Check phase. "Check/Load" trigger here?
+    // //to targeted Prototype world
+    //     //GUI Check phase. "Check/Load" trigger here?
 
-    //"SceneName" should be given, from the object calling upon this function
-    public void LoadMinigame(string SceneName) {
-        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
-        //debug log note/check. Consider Additive instead?
+    // //"SceneName" should be given, from the object calling upon this function
+    // public void LoadMinigame(string SceneName) {
+    //     SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+    //     //debug log note/check. Consider Additive instead?
+    // }
+    // //Menu Return
+    // public void LoadStartMenu() { SceneManager.LoadScene(0); }
+
+    // //Hub World Return
+    // public void LoadHubWorld() { SceneManager.LoadScene(1); }
+    // #endregion
+
+    // //TDL, include Options functions/functionality
+
+    // // Update is called once per frame. Unneeded for now void Update(){}
+
+
+
+
+    //******Danica moving stuff around*****
+    /*I moved all the content from the MainMenu script here so all the scene management is handled in one location, but I couldn't 
+    get the buttons to work in the June Almeida scene using the game manager, so I just left the UI manager object with the MainMenu script
+    in that scene alone.
+    Could someone else have a go at changing it so it uses the game manager pls?
+    
+    The scene transition when you go through the portraits is set up to use the game manager now. 
+    
+    */
+    public void MicroscopeScene()
+    {
+        SceneManager.LoadScene("2-1_JuneAlmeidaMicroscopeScene");
     }
-    //Menu Return
-    public void LoadStartMenu() { SceneManager.LoadScene(0); }
 
-    //Hub World Return
-    public void LoadHubWorld() { SceneManager.LoadScene(1); }
+    public void HubworldScene()
+    {
+        SceneManager.LoadScene("HubWorld");
+    }
+    // //Andrew L Edit = a bit inefficient? So instead, going to try and make a "generic name X" Scene manager, in case it 'just works'.
+    // public void GenericScene(string scene_name)
+    // { SceneManager.LoadScene(scene_name); }
+
+    // This quits the game and includes a debug message when testing
+    public void QuitGame()
+    {
+        Debug.Log("Quit!");
+        Application.Quit();
+    }
+
     #endregion
-
-    //TDL, include Options functions/functionality
-
-    // Update is called once per frame. Unneeded for now void Update(){}
 }

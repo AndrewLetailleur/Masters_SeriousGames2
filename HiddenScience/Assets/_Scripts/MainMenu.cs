@@ -18,6 +18,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("HubWorld");
     }
 
+    //Andrew L Edit = a bit inefficient? So instead, going to try and make a "generic name X" Scene manager, in case it 'just works'.
+    public void GenericScene(string scene_name)
+    { SceneManager.LoadScene(scene_name); }
+
     // This quits the game and includes a debug message when testing
     public void QuitGame()
     {

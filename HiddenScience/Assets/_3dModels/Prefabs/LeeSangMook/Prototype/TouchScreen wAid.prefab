@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5660206622029719538}
   - component: {fileID: 1656639615656896294}
   - component: {fileID: 4108167418638394944}
+  - component: {fileID: 5553638166356641071}
   m_Layer: 0
   m_Name: TouchScreen wAid
   m_TagString: Untagged
@@ -63,6 +64,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5553638166356641071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073193999574024377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae06e444ce34ec4cb096e10776d3121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnswerPiece: {fileID: 8809490043192840370, guid: 930ccc92a61f7a1419100f9904fae778,
+    type: 3}
+  puzzle: Colour
 --- !u!1001 &1656504854079993851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +150,7 @@ PrefabInstance:
     - {fileID: 499002655, guid: 520057118c380f7498c5f94bed1650c7, type: 3}
     - {fileID: 499002658, guid: 520057118c380f7498c5f94bed1650c7, type: 3}
     - {fileID: 4713926934244820487, guid: 520057118c380f7498c5f94bed1650c7, type: 3}
+    - {fileID: 6277144833166949648, guid: 520057118c380f7498c5f94bed1650c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 520057118c380f7498c5f94bed1650c7, type: 3}
 --- !u!4 &1066191317635674193 stripped
 Transform:

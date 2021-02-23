@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 4713926934244820487}
   - component: {fileID: 499002655}
   - component: {fileID: 499002658}
+  - component: {fileID: 6277144833166949648}
   m_Layer: 0
   m_Name: TouchAid
   m_TagString: Draggable
@@ -235,5 +236,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.5, z: 1}
+  m_Size: {x: 0.3, y: 2, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6277144833166949648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258652958286896324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae06e444ce34ec4cb096e10776d3121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnswerPiece: {fileID: 2073193999574024377, guid: c621d89a86d4a994eacc7b13de4164d5,
+    type: 3}
+  puzzle: Touch
