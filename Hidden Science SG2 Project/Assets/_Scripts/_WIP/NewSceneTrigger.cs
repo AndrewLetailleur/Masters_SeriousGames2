@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 //only purpose of this script, is to function as a "on Trigger enter" condition, to entering new scenes. Modularity wise?
 
+//expanded/tweaked by "Portrait Interaction" script. Consider scrapping/deleting?
 public class NewSceneTrigger : MonoBehaviour
 {
     public string scene_name;
@@ -11,4 +12,4 @@ public class NewSceneTrigger : MonoBehaviour
     //Andrew L Edit = a bit inefficient? So instead, going to try and make a "generic name X" Scene manager, in case it 'just works'.
     private void GenericScene(string scene_name)
     { SceneManager.LoadScene(scene_name); }
-}
+}//end NewSceneTrigger class

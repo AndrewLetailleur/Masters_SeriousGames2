@@ -67,7 +67,7 @@ public class GlobalDraggable : MonoBehaviour
             Camera.main.ScreenPointToRay(input));
         //debug code to avoid errors, test/checker wise? But assume it's linked/synced to input?
         if (hit2d.collider != null && hit2d.collider.tag == "Draggable")//"draggable" tag is optional in this check
-            Ray2D_Drag(input, hit2d);//Debug.Log("2d win");
+        { Ray2D_Drag(input, hit2d); }//Debug.Log("2d win"); 
     }//end RayTest
 
     /*Simplified "Scroll" sample code post check?" Not supported or implemented on Global just yet

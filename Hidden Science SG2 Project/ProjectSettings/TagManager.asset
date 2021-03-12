@@ -9,7 +9,6 @@ TagManager:
   - Virus
   - CellDebris
   - GUI
-  - WindTunnel
   layers:
   - Default
   - TransparentFX
