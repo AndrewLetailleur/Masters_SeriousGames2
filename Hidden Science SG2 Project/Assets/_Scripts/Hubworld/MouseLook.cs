@@ -5,50 +5,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**************************************************
-*    Title: MouseLook
-*    Author: Danica
-*    >Edited/tweaked by, Andrew Letailleur
-*    Date: 10/03/2021
-*    Code version: 1.1 (Tweak)
-*    Availability: Here
-*    ===============
-*    References: switch case logic, set up wise
-**************************************************/
-
-/// <summary>
-/// The purpose of this script, is [BLAH]
-/// =
-/// PS: Debugged code is fixed, hidden cursor wise.
-/// Further tweaks are parraell/passed with the
-/// "PortraitInteraction" script
-/// </summary>
+//Edit by Andrew: Debugged code is fixed, hidden cursor wise. Further tweaks are parallel/passed with the "PortraitInteraction" script
 public class MouseLook : MonoBehaviour
 {
-
     public float mouseSensitivity = 100f;
     public Transform playerBody;
     float xRotation = 0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //added some comments here, for future editing REF = AIL
-       Cursor.lockState = CursorLockMode.Confined;//locks the cursor at start
-       Cursor.visible = true;//false;//hides the cursor from view, jnc
-    }//end Start
+       Cursor.lockState = CursorLockMode.Confined;//locks the cursor at start to within the game window
+       Cursor.visible = false;//hides the cursor from view
+    }
 
-    // Update is called once per frame
+    public void CursorEnabled() //this method is called by the "Gallery guide management" fungus block
+    {
+      Cursor.visible = true;//show the cursor
+    }
+
+    public void CursorDisabled() //this method is called by the Gallery Guide close button
+    {
+      Cursor.visible = false;//hide the cursor
+    }
+
     void Update()
     {
-      float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-      float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+      float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;//get the X mouse movement input 
+      float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;//get the Y mouse movement input
 
-      xRotation -= mouseY;
-      xRotation = Mathf.Clamp(xRotation,-90f,90f);
+      xRotation -= mouseY; //Decrease X rotation every frame based on mouseY
+      xRotation = Mathf.Clamp(xRotation,-90f,90f); //clamp the X rotation so the player can't over- rotate and flip over to look behind themselves
 
-      transform.localRotation = Quaternion.Euler(xRotation,0f,0f);
-      playerBody.Rotate(Vector3.up * mouseX);
+      transform.localRotation = Quaternion.Euler(xRotation,0f,0f); // apply this rotation
+      playerBody.Rotate(Vector3.up * mouseX); //rotate the player body around the X axis according to mouseX 
     
-    }//end Update
-}//end MouseLook class
+    }
+}

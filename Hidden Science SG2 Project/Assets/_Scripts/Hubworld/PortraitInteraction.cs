@@ -51,7 +51,7 @@ public class PortraitInteraction : MonoBehaviour
                     SceneManager.LoadScene("MaryJacksonPuzzle");
                     break;
                 case Stage.Virus://gm.MicroscopeScene();
-                    SceneManager.LoadScene("2-1_JuneAlmeidaVirusGame");
+                    SceneManager.LoadScene("2-1_JuneAlmeidaMicroscopeScene");
                     break;
                 default://none, default to cursor locking again JNC
                     Cursor.lockState = CursorLockMode.Confined;//alt is locked
